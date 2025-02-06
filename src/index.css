@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition duration-300;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-green-600 text-green-600 px-6 py-2 rounded-lg hover:bg-green-600 hover:text-white transition duration-300;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* overflow: hidden;  */
+}
+
+#root {
+  height: 100%;
+  /* overflow: auto; */
+}
