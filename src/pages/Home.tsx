@@ -319,7 +319,7 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/grower.jpg"
           alt="Farmer"
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100 opacity-60 absolute top-0 left-0"
+          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100 absolute top-0 left-0"
         />
         {/* Optional Content Overlay */}
         <div className="absolute inset-0 bg-black/50 group-hover:bg-transparent transition duration-300 z-10"></div>
@@ -346,7 +346,7 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/tradecenter.jpg"
           alt="Business"
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100 opacity-60"
+          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100"
         />
         <div className="absolute inset-0 bg-black/50 group-hover:bg-transparent transition duration-300 z-10"></div>
         
