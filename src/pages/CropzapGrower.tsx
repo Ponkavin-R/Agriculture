@@ -3,6 +3,7 @@ import axios from "axios";
 import About from "../assest/farmerabout.jpeg";
 import Feature from "../assest/farmerfeature.jpeg";
 import Modal from "../components/ModelPopup";
+import { motion } from "framer-motion";
 
 const CropzapGrower = () => {
   const [formData, setFormData] = useState({
@@ -84,27 +85,80 @@ const CropzapGrower = () => {
   };
 
   return (
-    <main className="main pt-20 px-4 sm:px-8 lg:px-36">
-      <section id="about" className="about py-16 bg-white">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="text-2xl font-bold mb-4">What is CropzapGrower</h3>
-            <p className="text-gray-600 mb-6">
-              Cropzap Grower is your go-to platform for farmers,Providing easy access to quality inputs for cultivation and the latest agricultural updates. Engage with a community of fellow farmers by sharing video content and tips for success. Market your produce quickly and efficiently, connecting directly with buyers. Join Cropzap Grower today and empower your farming journey!
-            </p>
+    <main className="pt-16 sm:px-8 md:px-16 lg:px-0">
+         <section className="relative py-48 h-auto">
+            <div className="absolute inset-0">
+              <img
+                src="/blog/vegetables.webp"
+                alt="Agricultural Innovation"
+                className="w-full h-full object-fill"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/50"></div>
+            </div>
+            <div className="relative max-w-7xl mx-auto px-4 text-left text-white ">
+              <h1 className="text-4xl font-bold mb-16">CropzapGrower</h1>
+              
+            </div>
+          </section>
+          <section id="about" className="about py-16 bg-white">
+  <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    {/* Animated Text Section */}
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="self-start"
+    >
+      <h3 className="text-4xl font-bold mb-2">What is CropzapGrower?</h3>
+      <p className="text-gray-600 mt-9 text-[20px] leading-relaxed">
+        Cropzap’s supply chain solution is designed to streamline the movement of fresh produce 
+        from farms to businesses with efficiency, transparency, and minimal wastage. By leveraging 
+        real-time market insights, AI-driven demand forecasting, and a robust logistics network, 
+        Cropzap ensures that farmers receive fair prices while businesses get consistent, high-quality produce. 
+        The platform eliminates inefficiencies caused by traditional middlemen by directly connecting farmers 
+        and FPOs to retail stores, restaurants, hostel canteens, and other institutional buyers. With a 
+        focus on reducing post-harvest losses, Cropzap optimizes supply and demand mapping, ensuring 
+        that surplus produce reaches the right buyers before spoilage occurs. Additionally, its tech-driven 
+        procurement system provides traceability, quality assurance, and timely delivery, making agri-commerce 
+        more reliable and profitable for all stakeholders involved.
+      </p>
 
-          </div>
-          <div className="text-center sm:text-left">
-            <img
-              src={About}
-              alt="About"
-              className="mx-auto max-w-full h-auto rounded-md shadow-lg"
-            />
-          </div>
+      {/* Key Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 text-[18px] leading-relaxed mt-6">
+        {/* Left Side */}
+        <div>
+          <p>✅ <span className="font-semibold">Quick and Easy Interface</span> – A simple, user-friendly platform for effortless ordering, saving time and boosting efficiency.</p>
+          <p>✅ <span className="font-semibold">Hassle-Free Supply</span> – Reliable farm-to-business supply chain ensuring smooth, timely deliveries without disruptions.</p>
+          <p>✅ <span className="font-semibold">Affordable Cost</span> – Direct sourcing from farmers eliminates middlemen, offering competitive pricing with no hidden costs.</p>
         </div>
-      </section>
 
-      <section id="features" className="features py-16 px-4 sm:px-10 bg-green-50">
+        {/* Right Side */}
+        <div>
+          <p>✅ <span className="font-semibold">Wider Selection of Produce</span> – Access a diverse range of fresh produce, staples, sweets, and snacks in one place.</p>
+          <p>✅ <span className="font-semibold">Consistently Exceptional Standards</span> – Every product is handled with care to maintain its natural integrity and freshness.</p>
+          <p>✅ <span className="font-semibold">Flexible and Tension-Free Ordering</span> – Custom bulk orders, flexible deliveries, and a seamless ordering process for convenience.</p>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* Animated Image Section */}
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-center sm:text-left flex justify-center items-center"
+    >
+      <img
+        src={About}
+        alt="About"
+        className="w-full h-full rounded-md shadow-lg"
+      />
+    </motion.div>
+  </div>
+</section>
+
+
+     <section id="features" className="features py-16 px-4 sm:px-10 bg-green-50">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[

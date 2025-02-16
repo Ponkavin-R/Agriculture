@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Brain, TrendingUp, BarChart, LineChart, TargetIcon, Lightbulb, ArrowRight, Asterisk, Users, BarChart2, FileText, CloudSun, User, Calendar } from 'lucide-react';
+import { Brain, TrendingUp, BarChart, LineChart, Target, Lightbulb, Asterisk, Users, BarChart2, FileText, CloudSun, User, Calendar } from 'lucide-react';
 import { motion } from "framer-motion";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -9,7 +9,6 @@ export default function AboutPage() {
   gsap.registerPlugin(ScrollTrigger);
 
   const imageRefs = useRef<HTMLImageElement[]>([]);
-
 
   useEffect(() => {
     imageRefs.current.forEach((element) => {
@@ -31,18 +30,17 @@ export default function AboutPage() {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [imageRefs]);
-
-
+   
   return (
     <div className="bg-white overflow-hidden">
       {/* Hero Section */}
-      <section className="relative py-20 mt-16 h-96">
+      <section className="relative py-20 mt-16 h-[500px]">
   <div className="absolute inset-0">
     <img src="/bg/ourstory.jpg" alt="Agricultural Innovation" className="w-full h-full object-fill" />
   </div>
   <div className="relative max-w-7xl mx-auto px-4 text-left text-white z-10">
-    <h1 className="text-4xl font-bold mb-4">Our Story</h1>
-    <p className="text-xl">The Roots of Agricultural Innovation.</p>
+    <h1 className="text-6xl font-bold mt-24">Our Story</h1><br></br>
+    <p className="text-3xl">The Roots of Agricultural Innovation.</p>
   </div>
 </section>
 
@@ -57,7 +55,7 @@ export default function AboutPage() {
                 from market data analytics to personalised business intelligence, ensuring our customers stay ahead of
                 market trends and make informed decisions.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-[18px]">
                 Join us on this journey to create a more connected and efficient agricultural ecosystem.
               </p>
             </div>
@@ -72,45 +70,63 @@ export default function AboutPage() {
         </div>
       </section>
 
-
       {/* Vision and Mission */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Vision Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-white p-8 rounded-lg shadow-lg"
-            >
-              <div className="flex items-center mb-4">
-                <Lightbulb size={42} className='text-green-700' />
-                <h3 className="text-3xl font-bold ml-4">Our Vision</h3>
+      <section className="py-20 bg-gray-100">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-40">
+          {/* Vision Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white p-2 rounded-lg shadow-lg flex flex-col items-center text-center relative w-full"
+          >
+            {/* Full-width Line Behind Circle */}
+            <div className="relative flex items-center justify-center w-full">
+              <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-16 bg-gradient-to-r from-green-600 to-blue-500"></div>
+              
+              {/* Outlined Circle */}
+              <div className="w-28 h-28 flex items-center justify-center rounded-full border-4 border-green-500 bg-white shadow-md relative z-10">
+                <Lightbulb size={42} className="text-green-700" />
               </div>
-              <p className="text-gray-600 text-[18px]">
-                Revolutionizing Agriculture for Prosperity, Unity, and Sustainable Growth.
-              </p>
-            </motion.div>
+            </div>
 
-            {/* Mission Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-white p-8 rounded-lg shadow-lg"
-            >
-              <div className="flex items-center mb-4">
-                <TargetIcon size={42} className='text-green-700' />
-                <h3 className="text-3xl font-bold ml-4">Our Mission</h3>
+            <h3 className="text-3xl font-bold mt-6">Our Vision</h3>
+            <p className="text-gray-600 text-lg mt-4 text-left pl-6">
+              To be a global leader in agritech, empowering farmers with
+              cutting-edge solutions for a sustainable food ecosystem where all
+              businesses and value chains prosper.
+            </p>
+          </motion.div>
+
+          {/* Mission Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white p-2 rounded-lg shadow-lg flex flex-col items-center text-center relative w-full"
+          >
+            {/* Full-width Line Behind Circle */}
+            <div className="relative flex items-center justify-center w-full">
+              <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-16 bg-gradient-to-r from-green-600 to-blue-500"></div>
+              
+              {/* Outlined Circle */}
+              <div className="w-28 h-28 flex items-center justify-center rounded-full border-4 border-green-500 bg-white shadow-md relative z-10">
+                <Target size={42} className="text-green-700" />
               </div>
-              <p className="text-gray-600 text-[18px]">
-                Revolutionize the agricultural landscape through a trusted network, innovative technology, seamless integration, and sustainable practices, fostering growth and prosperity for all.
-              </p>
-            </motion.div>
-          </div>
+            </div>
+
+            <h3 className="text-3xl font-bold mt-6">Our Mission</h3>
+            <ul className="text-gray-600 text-lg mt-3 text-left pl-8 pr-4 list-disc marker:text-green-600">
+              <li>Transform agriculture through innovation: Boost productivity, minimize space, maximize business profitability.</li>
+              <li className="mt-2">Build a resilient value chain: Connect farmers directly to businesses, ensuring fair prices and access to high-quality produce.</li>
+            </ul>
+
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
+ 
 
       {/* Founder's Message */}
       <section className="py-20 bg-gray-50">
@@ -123,10 +139,10 @@ export default function AboutPage() {
               className="bg-white p-8"
             >
               <h2 className="text-3xl font-bold mb-6 text-green-700">Founder's Message</h2>
-              <p className="text-gray-600 mb-4 text-justify">
+              <p className="text-gray-600 mb-4 text-justify text-[18px]">
                 I'm Dharunkumar, the Founder and CEO of Cropzap Agri Networks. Our mission is rooted in the belief that technology and data-driven decisions are essential to transforming agriculture. I started this venture with a vision to empower farmers and revolutionize agricultural practices.
               </p>
-              <p className="text-gray-600 text-justify">
+              <p className="text-gray-600 text-justify text-[18px]">
                 Agriculture is not just the backbone of India's economy but the pathway to realizing the quote by Honorable Prime Minister Narendra Modi, to make the country a $5 trillion economy. With the integration of agricultural technology and innovative commodity exchange models, we aim to secure India's food future while fostering sustainability and economic growth.
               </p>
             </motion.div>
@@ -208,8 +224,6 @@ export default function AboutPage() {
               </p>
             </div>
           </motion.div>
-
-           
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -333,87 +347,124 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            The Highlights
-          </h2>
-          <p className="text-center text-lg text-gray-600 mb-12">
-            Join Cropzap today and experience the future of agriculture, where data-driven decisions lead to unparalleled success.
-          </p>
+  <div className="max-w-7xl mx-auto px-4">
+  <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+      The <span className="underline decoration-green-500">Highlights</span>
+    </h2>
+    <p className="text-center text-lg text-gray-600 mb-12">
+      Join <span className="font-semibold text-green-600">Cropzap</span>  today and experience the future of agriculture, where data-driven decisions lead to unparalleled success.
+    </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Digital Marketplace */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <Users className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Digital Marketplace</h3>
-              <p className="text-gray-600">
-                Transforming agriculture with a data-driven platform connecting farmers, FPOs, and businesses for optimized pricing, supply chain efficiency, and sustainable growth in the agricultural ecosystem.
-              </p>
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Digital Marketplace */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2  hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <Users className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Digital Marketplace</h3>
+        <p className="text-gray-600">
+          Transforming agriculture with a data-driven platform connecting farmers, FPOs, and businesses for optimized pricing, supply chain efficiency, and sustainable growth.
+        </p>
+      </motion.div>
 
-            {/* Market Data & Analytics */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <BarChart2 className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Market Data & Analytics</h3>
-              <p className="text-gray-600">
-                Access real-time market prices, accurate demand forecasts, and comprehensive competitor analysis. Make informed decisions swiftly and strategically. Drive growth and maximize profits with the latest market insights.
-              </p>
-            </div>
+      {/* Market Data & Analytics */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2  hover:border-teal-500  hover:shadow-xl transition duration-300"
+      >
+        <BarChart2 className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Market Data & Analytics</h3>
+        <p className="text-gray-600">
+          Access real-time market prices, accurate demand forecasts, and competitor analysis. Make informed decisions swiftly and strategically.
+        </p>
+      </motion.div>
 
-            {/* Operational & Financial Analytics */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <TrendingUp className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Operational & Financial Analytics</h3>
-              <p className="text-gray-600">
-                Optimize yields, manage resources efficiently, and analyze financial performance to maximize profitability. Leverage our insights to drive smarter agricultural practices and achieve better financial outcomes.
-              </p>
-            </div>
+      {/* Operational & Financial Analytics */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2  hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <TrendingUp className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Operational & Financial Analytics</h3>
+        <p className="text-gray-600">
+          Optimize yields, manage resources efficiently, and analyze financial performance to maximize profitability.
+        </p>
+      </motion.div>
 
-            {/* Commodity Insights & Agri News Forecasting */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <FileText className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Commodity Insights & Agri News Forecasting</h3>
-              <p className="text-gray-600">
-                Leverage comprehensive weather analysis, pest and disease forecasting, and market risk assessments. Get the insights you need to make informed agricultural decisions and mitigate risks effectively.
-              </p>
-            </div>
+      {/* Commodity Insights & Agri News Forecasting */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2  hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <FileText className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Commodity Insights & Agri News Forecasting</h3>
+        <p className="text-gray-600">
+          Leverage weather analysis, pest forecasting, and market risk assessments for informed agricultural decisions.
+        </p>
+      </motion.div>
 
-            {/* Risk Management */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <CloudSun className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Risk Management</h3>
-              <p className="text-gray-600">
-                Stay ahead with our comprehensive weather analysis, pest and disease forecasting, and market risk assessments. Gain the insights you need to make informed agricultural decisions. Mitigate risks effectively and drive growth in your agri-business.
-              </p>
-            </div>
+      {/* Risk Management */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.0 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2  hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <CloudSun className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Risk Management</h3>
+        <p className="text-gray-600">
+          Stay ahead with weather analysis, pest forecasting, and market risk assessments to mitigate risks effectively.
+        </p>
+      </motion.div>
 
-            {/* Dedicated Support */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <User className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Dedicated Support</h3>
-              <p className="text-gray-600">
-                Benefit from personalized consultations, dedicated account managers, and customized business strategies. Stay ahead with our comprehensive weather analysis, pest and disease forecasting, and market risk assessments.
-              </p>
-            </div>
+      {/* Dedicated Support */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2 hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <User className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Dedicated Support</h3>
+        <p className="text-gray-600">
+          Benefit from personalized consultations, dedicated account managers, and customized business strategies.
+        </p>
+      </motion.div>
 
-            {/* Networking Events */}
-            <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-              <Calendar className="text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-4">Networking Events</h3>
-              <p className="text-gray-600">
-                Participate in high-impact events designed to boost your visibility and networking opportunities. Benefit from personalized consultations, dedicated account managers, and customized business strategies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Networking Events */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.4 }}
+        viewport={{ once: true }}
+        className="p-6 rounded-lg border-2 hover:border-teal-500 hover:shadow-xl transition duration-300"
+      >
+        <Calendar className="text-green-600 mb-4" size={40} />
+        <h3 className="text-xl font-semibold mb-4">Networking Events</h3>
+        <p className="text-gray-600">
+          Participate in high-impact events to boost visibility and networking opportunities.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
-
-
-      {/* Call to Action */}
       
     </div>
   );

@@ -81,12 +81,7 @@ export default function Navbar() {
                   >
                     Large Volume Trading
                   </Link>
-                  <Link
-                    to="/solution/form2"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  >
-                    Agri Services
-                  </Link>
+                 
                 </div>
               )}
             </div>
