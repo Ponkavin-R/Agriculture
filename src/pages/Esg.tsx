@@ -15,9 +15,9 @@ const ESG = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/50"></div>
             </div>
             <div className="relative max-w-7xl mx-auto px-4 text-left text-white z-10">
-              <h1 className="text-4xl font-bold mb-4">ESG in Agriculture</h1>
-              <p className="text-2xl font-bold mb-4">
-                How sustainability, social responsibility, and governance are shaping the future of farming.
+              <h1 className="text-5xl font-bold mb-4">ESG in Agriculture</h1><br></br>
+              <p className="text-3xl font-bold mb-4">
+                How sustainability, social responsibility, and governance<br></br> are shaping the future of farming.
               </p>
             </div>
           </section>
@@ -26,11 +26,14 @@ const ESG = () => {
           <section className="relative flex justify-center mt-[-100px]">
             <div className="bg-white w-[90%] p-6 rounded-lg text-center shadow-lg transition-all duration-300 ease-in-out">
               <p className="text-gray-600 text-[22px] mt-7 mx-20 text-left">
-                Our ESG initiatives are governed by three mandates. First, all ESG projects that we undertake are
-                focused on delivering tangible on-ground impact, and not mere ESG reporting. Second, all ESG projects are clearly
-                ROI-driven while measuring the on-ground impact. And third, we stay ahead of what regulations demand and continue to
-                push ahead relentlessly in adopting what the latest technologies offer us in terms of footprint and impact reduction.
-                We firmly believe that doing good has to be good for business.
+              Three core principles guide our future ESG goals. First, we will focus exclusively on ESG projects that
+               deliver tangible, measurable impact on the ground, prioritizing real-world results over simply fulfilling
+                reporting requirements. Second, all ESG initiatives will be ROI-driven, with clear metrics to demonstrate 
+                both on-the-ground impact and positive financial returns, reinforcing our belief that doing good must also
+                 be good for business. Finally, we will maintain a proactive approach to evolving regulations, consistently 
+                 adopting cutting-edge technologies to minimize our environmental footprint and maximize our positive impact, 
+                 positioning us as leaders in sustainable business practices.
+
               </p>
           
     
@@ -38,7 +41,7 @@ const ESG = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-7xl mx-auto mt-8 text-left">
             {[
-              { icon: "🌍", title: "Net Zero Carbon Emissions", text: "By deploying impactful decarbonizing strategies, WayCool ensures a minimum footprint on our environment through large-scale carbon avoidance and carbon restoration projects across the value chain of the company." },
+              { icon: "🌍", title: "Net Zero Carbon Emissions", text: "Cropzap recognizes the importance of environmental stewardship and is actively pursuing impactful decarbonizing strategies. These strategies encompass large-scale carbon avoidance and carbon restoration projects throughout our value chain, ensuring a minimal footprint on the environment." },
               { icon: "💧", title: "Net Water Positive", text: "We aim to become water positive across our operations by undertaking initiatives that allow the company to give back more water than originally consumed." },
               { icon: "♻️", title: "Net Zero Liquid Waste Discharge", text: "We envisage ensuring 100% of the water treated and reused within our facility meets our domestic needs or goes into groundwater recharge. The objective is to cease dumping of used water into the ground or water channels that may add to existing pollutants." },
             ].map((item, index) => (
@@ -62,44 +65,21 @@ const ESG = () => {
         Climate Resilient Supply Chain
       </h2>
       <p className="text-gray-600 text-lg mb-4">
-        Focused on food development and distribution, we leverage innovative technologies 
-        to scale and operate a complex supply chain from soil-to-sale. The technology 
-        brings complete, real-time visibility and control across the supply chain, 
-        be it in demand planning, managing inventory, sales force automation, and distribution.
+      We will continue to leverage innovative technologies to scale and optimize our complex soil-to-sale supply chain, focusing on food development and distribution. Our ongoing commitment to technology will ensure complete, real-time visibility and control across all aspects of the supply chain, from demand planning and inventory management to sales force automation and distribution.
+
       </p>
 
       <p className="text-gray-600 text-lg mb-4">
-        With the use of advanced tools like AI and ML, we have not only created avenues 
-        of economic value to the farmers, retailers, and consumers, but built an efficient 
-        supply chain demonstrating resilience to climate change impact, and helped achieve 
-        regional food security.
+      By harnessing the power of advanced tools like AI and ML, we will expand avenues of economic value for farmers, retailers, and consumers. Furthermore, we will strengthen our efficient and resilient supply chain, mitigating the impacts of climate change and contributing significantly to regional food security.
       </p>
-
-      {/* Key Metrics */}
-      <div className="mt-6 space-y-4">
-        <div className=" p-4 ">
-          <h3 className="text-3xl font-semibold text-green-700">20,500 +</h3>
-          <p className="text-gray-600 ">Tons Food Loss Avoided</p>
-        </div>
-
-        <div className=" p-4 ">
-          <h3 className="text-3xl font-semibold text-green-700">7,00,00,00,000 INR</h3>
-          <p className="text-gray-600">Economic Value Saved By Keeping Food In The Value Chain</p>
-        </div>
-
-        <div className=" p-4 ">
-          <h3 className="text-3xl font-semibold text-green-700">11,000 tCO2e</h3>
-          <p className="text-gray-600">Climate Impact - Food Waste Emissions Avoided</p>
-        </div>
-      </div>
     </div>
 
     {/* Right Image */}
     <div className="flex items-center justify-center hover:scale-105">
       <img
-        src="/blog/esg1.webp"
+        src="/blog/climate.jpg"
         alt="Climate Resilient Supply Chain"
-        className="w-[600px] h-[600px] rounded-lg shadow-lg"
+        className="w-[500px] h-[500px] rounded-lg shadow-lg"
       />
     </div>
   </div>
@@ -124,16 +104,18 @@ const ESG = () => {
                   {/* Right Content */}
                   <div className="flex flex-col justify-center">
                     <div className=" p-4 text-center">
-                      <h2 className="text-4xl font-semibold text-green-700">
+                      <h2 className="text-4xl font-semibold text-gray-700">
                       Harnessing Green Power
                       </h2>
                     </div>
 
                     <p className="text-gray-600 text-lg mt-6 text-left">
-                    By effectively utilising the available roof area of distribution centres, WayCool has
-                    installed rooftop solar power plants to harness solar power for its daytime power
-                      consumption thereby reducing not only GHG emissions, but also reducing the operating costs
-                      pertaining to energy consumption by 43% in the facilities
+                    Cropzap will maximize the utilization of available roof space on its 
+                    distribution centers by installing rooftop solar power plants. This initiative
+                     will harness solar energy to offset daytime power consumption, significantly reducing 
+                     both greenhouse gas emissions and operating costs associated with energy usage. 
+                     We aim to achieve substantial energy cost savings through this program.
+
                     </p>
 
                     
@@ -158,6 +140,49 @@ const ESG = () => {
 
                 </div>
               </div>
+              <div className="max-w-8xl mx-auto px-10 md:px-12 py-16">
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-14">
+    {/* Left Content */}
+    <div className="flex flex-col justify-center">
+      {/* Moved Title Inside the Box */}
+      <h2 className="text-4xl font-semibold text-gray-700 mb-6 text-center md:text-left">
+      Green Logistics
+      </h2>
+      <p className="text-gray-600 text-lg mb-4">
+      As a commitment towards reducing the environmental footprint of our food distribution network, 
+      WayCool has deployed electric vehicles in our last mile delivery 
+      fleet to decarbonise our logistics-based emissions
+      </p>
+
+      {/* Key Metrics */}
+      <div className="mt-6 space-y-4">
+        <div className=" p-4 ">
+          <h3 className="text-3xl font-semibold text-green-700">120,000 kms</h3>
+          <p className="text-gray-600 ">Green Kilometers</p>
+        </div>
+
+        <div className=" p-4 ">
+          <h3 className="text-3xl font-semibold text-green-700">22 %</h3>
+          <p className="text-gray-600">Electric Vehicles (EV) Share in Last Mile Fleet</p>
+        </div>
+
+        <div className=" p-4 ">
+          <h3 className="text-3xl font-semibold text-green-700">290 tCO2e GHG</h3>
+          <p className="text-gray-600">Emissions Avoided</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Right Image */}
+    <div className="flex items-center justify-center hover:scale-105">
+      <img
+        src="/blog/green-logistic.jpg"
+        alt="Climate Resilient Supply Chain"
+        className="w-[500px] h-[500px] rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+</div>
 
 
 
@@ -181,15 +206,7 @@ const ESG = () => {
           </div>
     
           {/* CTA Section */}
-          <div className="text-center py-12 px-6 bg-green-700 text-white">
-            <h2 className="text-4xl font-semibold">Join the ESG Movement</h2>
-            <p className="text-lg mt-4 max-w-2xl mx-auto">
-              Help create a sustainable and responsible agricultural industry for future generations.
-            </p>
-            <button className="mt-6 px-6 py-3 bg-white text-green-700 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all">
-              Learn More
-            </button>
-          </div>
+          
         </div>
       );
     };

@@ -147,7 +147,7 @@ export default function Home() {
               <img src="/logo/logo_bg.png" alt="Logo" className="w-20 h-20" />
             </div>
             <h1 className='uppercase text-white font-bold text-4xl'>Cropzap</h1>
-            <p className='text-white font-medium text-lg'>Transforming Agriculture, through data-driven solutions, Nourishing Communities
+            <p className='text-white font-medium text-3xl'>Transforming Agriculture, through data-driven solutions, Nourishing Communities
 
             </p>
             <div className="flex flex-col text-white font-bold text-lg">
@@ -155,7 +155,7 @@ export default function Home() {
                 
               </div>
 
-            <Link to="/our-story" className="inline-flex items-center border-2 border-white text-white px-6 py-3 rounded-full hover:scale-110 hover:border-green-300  hover:text-green-300 transition duration-300">
+            <Link to="/our-story" className="inline-flex items-center text-[20px] border-2 border-white text-white px-6 py-3 rounded-full hover:scale-110 hover:border-green-300  hover:text-green-300 transition duration-300">
               About
             </Link>
           </div>
@@ -174,18 +174,15 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <h2 className="text-3xl font-bold mb-6">Welcome to Cropzap</h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-[18px]">
                 Where innovation meets agriculture. We empower farmers, Farmer Producer Organizations (FPOs),
                 and businesses through a comprehensive platform designed to streamline transactions, enhance
                 productivity, and maximize profitability.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-[18px]">
                 Catering to the agricultural requirements of smaller urban areas in India by delivering a steady stream of fresh Vegetables, Fruits, and Groceries. At Cropzap, we have faith in the potential of innovation to transform the agricultural landscape. Our goal is straightforward yet impactful: to connect farmers and consumers while transforming the process through which fresh produce and groceries are delivered to households.
               </p>
-              <p className="text-gray-600">
-                By integrating cutting-edge technology with expert insights, we aim to transform the
-                agricultural landscape and foster sustainable growth for all stakeholders.
-              </p>
+             
             </motion.div>
 
             {/* Image Section */}
@@ -319,10 +316,10 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/grower.jpg"
           alt="Farmer"
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100 opacity-60 absolute top-0 left-0"
+          className="w-full h-[400px] object-cover transition duration-3000 absolute top-0 left-0"
         />
         {/* Optional Content Overlay */}
-        <div className="absolute inset-0 bg-black/50 group-hover:bg-transparent transition duration-300 z-10"></div>
+        <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
 
         {/* Overlay Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 z-20">
@@ -338,7 +335,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
+                
       {/* Mart Section */}
       <div className="relative overflow-hidden hover:scale-105 rounded-lg transition duration-300 group">
         {/* Image */}
@@ -346,14 +343,14 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/tradecenter.jpg"
           alt="Business"
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100 opacity-60"
+          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100"
         />
-        <div className="absolute inset-0 bg-black/50 group-hover:bg-transparent transition duration-300 z-10"></div>
+        <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
         
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8 z-20">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 z-20">
           <h3 className="text-2xl font-semibold text-white mb-4">Cropzap Mart</h3>
-          <p className="text-white text-[17px] mb-6">
+          <p className="text-white text-[17px] ">
             Do you operate a shop, restaurant, canteen, or represent a business?
           </p>
           <Link
