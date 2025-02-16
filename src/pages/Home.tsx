@@ -317,10 +317,14 @@ export default function Home() {
           src="/solutions/grower.jpg"
           alt="Farmer"
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100 absolute top-0 left-0"
 =======
           className="w-full h-[400px] object-cover transition duration-3000 absolute top-0 left-0"
 >>>>>>> 2c93ae5 (first commit)
+=======
+          className="w-full h-[400px] object-cover transition duration-3000 absolute top-0 left-0"
+>>>>>>> 2c93ae5ea4d0cde7be0eec5532e9ba5e3e91722f
         />
         {/* Optional Content Overlay */}
         <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
@@ -348,10 +352,14 @@ export default function Home() {
           src="/solutions/tradecenter.jpg"
           alt="Business"
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100"
 =======
           className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100"
 >>>>>>> 2c93ae5 (first commit)
+=======
+          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100"
+>>>>>>> 2c93ae5ea4d0cde7be0eec5532e9ba5e3e91722f
         />
         <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
         
