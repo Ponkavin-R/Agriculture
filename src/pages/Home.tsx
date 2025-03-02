@@ -237,67 +237,6 @@ export default function Home() {
       
    <Corevalues/>   
 
-      {/* Features Section */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-10">
-          <motion.h2
-            className="text-3xl font-bold text-center mb-4"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Why Choose Cropzap?
-          </motion.h2>
-          <motion.p
-            className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Experience the future of agriculture with our innovative platform
-          </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Brain className="text-green-600 mb-4" size={32} />,
-                title: "Smart Analytics",
-                description: "Data-driven insights to optimize your agricultural operations",
-              },
-              {
-                icon: <Users className="text-green-600 mb-4" size={32} />,
-                title: "Community Support",
-                description: "Connect with experts and fellow farmers",
-              },
-              {
-                icon: <BarChart className="text-green-600 mb-4" size={32} />,
-                title: "Market Intelligence",
-                description: "Real-time market data and price trends",
-              },
-              {
-                icon: <TrendingUp className="text-green-600 mb-4" size={32} />,
-                title: "Growth Support",
-                description: "Tools and resources for sustainable growth",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                className="p-6 bg-white rounded-lg  transition duration-300"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {feature.icon}
-                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Solutions Section */}
       <section className="py-20 bg-gray-50">
@@ -316,15 +255,7 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/grower.jpg"
           alt="Farmer"
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100 absolute top-0 left-0"
-=======
-          className="w-full h-[400px] object-cover transition duration-3000 absolute top-0 left-0"
->>>>>>> 2c93ae5 (first commit)
-=======
-          className="w-full h-[400px] object-cover transition duration-3000 absolute top-0 left-0"
->>>>>>> 2c93ae5ea4d0cde7be0eec5532e9ba5e3e91722f
         />
         {/* Optional Content Overlay */}
         <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
@@ -351,15 +282,7 @@ export default function Home() {
           ref={(el) => el && imageRefs.current.push(el)}
           src="/solutions/tradecenter.jpg"
           alt="Business"
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-60 opacity-100"
-=======
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100"
->>>>>>> 2c93ae5 (first commit)
-=======
-          className="w-full h-[400px] object-cover transition duration-300 group-hover:opacity-100"
->>>>>>> 2c93ae5ea4d0cde7be0eec5532e9ba5e3e91722f
         />
         <div className="absolute inset-0 group-hover:bg-black/50 bg-transparent transition duration-300 z-10"></div>
         

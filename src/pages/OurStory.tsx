@@ -3,7 +3,6 @@ import { Brain, TrendingUp, BarChart, LineChart, Target, Lightbulb, Asterisk, Us
 import { motion } from "framer-motion";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   gsap.registerPlugin(ScrollTrigger);
