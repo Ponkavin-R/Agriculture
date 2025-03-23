@@ -1,148 +1,162 @@
-// spell-checker: disable
-import { Menu, X, ChevronDown } from 'lucide-react';
-// spell-checker: enable
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const menuItems = [
+  { label: "Home", to: "/" },
+  { label: "Our Story", to: "/our-story" },
+  { label: "Blog", to: "/blog" },
+  { label: "ESG", to: "/esg" },
+  { label: "Contact", to: "/contact" },
+];
+
+const dropdownItems = [
+  { label: "Supply of Fresh Produce", to: "/solution/form1" },
+  { label: "Large Volume Trading", to: "/solution/form2" },
+  { label: "Agri Services", to: "/solution/form3" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
 
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        document.addEventListener('mousedown', handleClickOutside);
-      } else {
-        document.removeEventListener('mousedown', handleClickOutside);
-      }
-    };
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
 
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-
-  const handleDropdown = () => {
-    // console.log("dropdown clicked before: ", isDropdownOpen);
-    setIsDropdownOpen(!isDropdownOpen);
-  }
-  // console.log("dropdown clicked after: ", isDropdownOpen);
-
-
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isDropdownOpen]);
 
   return (
-    <nav className="bg-white bg-opacity-60 shadow-md fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img src={'/logo/logo-removebg-preview.png'} alt="Logo" className="h-10 w-auto" />
+    <nav className="bg-white shadow-md fixed w-screen z-50 p-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/">
+          <img src="/logo/logo-removebg-preview.png" alt="Logo" className="h-10 w-auto" />
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          {menuItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300"
+            >
+              {item.label}
             </Link>
-          </div>
+          ))}
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="relative text-gray-800 text-lg font-bold ml-10 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">Home</Link>
-            <Link to="/our-story" className="relative text-gray-800 text-lg font-bold ml-10 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">Our Story</Link>
-            <Link to="/blog" className="relative text-gray-800 text-lg font-bold ml-10 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">Blog</Link>    
-            <Link to="/esg" className="relative text-gray-800 text-lg font-bold ml-10 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">ESG</Link>
-            {/* Dropdown Menu */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="relative text-gray-800 text-lg font-bold ml-1 after:content-[''] after:absolute after:left-4 after:bottom-[-10px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block"
-              >
-                Our Solution <ChevronDown size={18} className="ml-32 mt-[-20px]" />
-              </button>
-              {isDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 shadow-lg rounded-md">
-                   <Link
-                    to="/solution/form1"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  >
-                    Supply of Fresh Produce
-                  </Link>
-                  <Link
-                    to="/solution/form2"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  >
-                    Large Volume Trading
-                  </Link>
-                 
-                </div>
-              )}
-            </div>
-
-            <Link to="/contact" className="relative text-gray-800 text-lg font-bold ml-10 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">Contact</Link>
-          </div>
-
-          {/* Mobile Menu */}
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="text-gray-800 text-lg font-semibold flex items-center hover:text-green-600 transition duration-300"
+            >
+              Our Solution <ChevronDown size={18} className="ml-1" />
             </button>
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 5 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute left-0  mt-5 w-56 bg-white border border-gray-200 shadow-lg rounded-md"
+                >
+                  {dropdownItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="block px-3  py-3 text-gray-800 hover:text-green-600"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-8 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className="relative text-gray-800 text-lg font-bold ml-3 after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:h-[3px] after:w-14 after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left block md:inline">Home</Link>
-            <Link to="/our-story" className="relative text-gray-800 text-lg font-bold ml-3 after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:h-[3px] after:w-24 after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left block md:inline">Our Story</Link>
-            <Link to="/our-story" className="relative text-gray-800 text-lg font-bold ml-3 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">Blog</Link>
-            <Link to="/our-story" className="relative text-gray-800 text-lg font-bold ml-3 after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:h-[3px] after:w-full after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left hidden lg:block">ESG</Link>
-            <div>
-              <button
-                onClick={handleDropdown}
-                className="flex items-center w-full px-3 py-2 text-gray-800 hover:text-green-700 text-[18px] font-bold"
-              >
-                Our Solution <ChevronDown size={18} className="ml-1" />
-              </button>
-              {isDropdownOpen && (
-                <div className="pl-4">
-                  <a
-                    href="/solution/form1"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  // onClick={() => setIsOpen(false)}
-                  >
-                     Supply of Fresh Produce
-                  </a>
-                  <a
-                    href="/solution/form2"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  // onClick={() => setIsOpen(false)}
-                  >
-                    Large Volume Trading
-                  </a>
-                  <a
-                    href="/solution/form2"
-                    className="block px-4 py-3 text-gray-800 font-semibold text-[16px] hover:text-green-600 transform rounded-md cursor-pointer transition-transform duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-600"
-                  // onClick={() => setIsOpen(false)}
-                  >
-                    Agri Services
-                  </a>
-                </div>
-              )}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 120 }}
+            className="fixed top-0 right-0 h-full w-56 bg-white shadow-lg p-5"
+          >
+            <button className="absolute top-5 right-5" onClick={() => setIsOpen(false)}>
+              <X size={24} />
+            </button>
+            <div className="mt-10 space-y-4">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="block text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center w-full text-gray-800 text-lg font-semibold hover:text-green-600"
+                >
+                  Our Solution <ChevronDown size={18} className="ml-1" />
+                </button>
+                <AnimatePresence>
+                  {isDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="pl-4 mt-5"
+                    >
+                      {dropdownItems.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="block text-gray-800 text-md mt-3 hover:text-green-600 transition duration-300"
+                          onClick={() => {
+                            setIsDropdownOpen(false);
+                            setIsOpen(false);
+                          }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
-            <Link to="/contact" className="relative text-gray-800 text-lg font-bold ml-3 after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:h-[3px] after:w-16 after:scale-x-0 after:bg-green-600 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:text-green-600 hover:after:origin-left block md:inline">Contact</Link>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
